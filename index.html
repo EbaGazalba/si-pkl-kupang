@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - SI PKL Kupang</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>SI PKL KUPANG</h1>
+    <p class="subtitle">Silakan login untuk melanjutkan</p>
+
+    <form id="formLogin">
+      <label for="username">Username</label>
+      <input type="text" id="username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" required>
+
+      <button type="submit" id="btnLogin">Masuk</button>
+    </form>
+
+    <div id="pesanError" class="pesan-error" style="display:none;"></div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

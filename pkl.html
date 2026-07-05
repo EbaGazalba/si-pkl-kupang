@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard PKL - SI PKL Kupang</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <span id="namaUser"></span>
+      <button id="btnLogout" class="btn-logout">Keluar</button>
+    </div>
+
+    <h1>Absen Harian</h1>
+    <p class="subtitle" id="tanggalHariIni"></p>
+
+    <!-- KONDISI 1: BELUM ABSEN MASUK -->
+    <div id="viewBelumMasuk" style="display:none;">
+      <p>Kamu belum absen masuk hari ini.</p>
+      <button id="btnAbsenMasuk">Absen Masuk</button>
+    </div>
+
+    <!-- KONDISI 2: SUDAH MASUK, BELUM PULANG -->
+    <div id="viewSudahMasuk" style="display:none;">
+      <div class="info-box">
+        Jam masuk hari ini: <strong id="jamMasukTampil"></strong>
+      </div>
+
+      <form id="formPulang">
+        <label for="kegiatan">Kegiatan Hari Ini</label>
+        <textarea id="kegiatan" rows="5" placeholder="Ceritakan kegiatan kamu hari ini..." required></textarea>
+        <button type="submit" id="btnAbsenPulang">Absen Pulang & Kirim Kegiatan</button>
+      </form>
+    </div>
+
+    <!-- KONDISI 3: SUDAH SELESAI HARI INI -->
+    <div id="viewSelesai" style="display:none;">
+      <div class="info-box">
+        ✅ Absen hari ini sudah lengkap<br><br>
+        Jam masuk: <strong id="jamMasukSelesai"></strong><br>
+        Jam pulang: <strong id="jamKeluarSelesai"></strong><br><br>
+        Kegiatan:<br>
+        <span id="kegiatanSelesai"></span>
+      </div>
+      <p class="subtitle">Sampai jumpa besok!</p>
+    </div>
+
+    <div id="pesanError" class="pesan-error" style="display:none;"></div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="pkl.js"></script>
+</body>
+</html>

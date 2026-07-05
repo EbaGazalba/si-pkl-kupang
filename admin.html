@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - SI PKL Kupang</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container container-lebar">
+    <div class="topbar">
+      <span id="namaUser"></span>
+      <button id="btnLogout" class="btn-logout">Keluar</button>
+    </div>
+
+    <h1>Panel Admin</h1>
+
+    <div class="tab-menu">
+      <button class="tab-btn active" data-tab="tabUser">Kelola User</button>
+      <button class="tab-btn" data-tab="tabAbsensi">Data Absensi</button>
+    </div>
+
+    <!-- TAB KELOLA USER -->
+    <div id="tabUser" class="tab-content">
+      <h2>Tambah User Baru</h2>
+      <form id="formTambahUser">
+        <label>Nama Lengkap</label>
+        <input type="text" id="namaBaru" required>
+
+        <label>Username</label>
+        <input type="text" id="usernameBaru" required>
+
+        <label>Password</label>
+        <input type="text" id="passwordBaru" required>
+
+        <label>Role</label>
+        <select id="roleBaru">
+          <option value="pkl">Anak PKL</option>
+          <option value="admin">Admin</option>
+        </select>
+
+        <button type="submit">Tambah User</button>
+      </form>
+
+      <h2>Daftar User</h2>
+      <table id="tabelUser">
+        <thead>
+          <tr><th>Nama</th><th>Username</th><th>Role</th><th>Aksi</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- TAB DATA ABSENSI -->
+    <div id="tabAbsensi" class="tab-content" style="display:none;">
+      <h2>Rekap Absen & Kegiatan</h2>
+      <table id="tabelAbsensi">
+        <thead>
+          <tr><th>Nama</th><th>Tanggal</th><th>Jam Masuk</th><th>Jam Keluar</th><th>Kegiatan</th><th>Aksi</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
