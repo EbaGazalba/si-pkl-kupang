@@ -1,12 +1,12 @@
 const sesi = JSON.parse(localStorage.getItem("sesiPKL"));
 if (!sesi || sesi.role !== "admin") {
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 
 document.getElementById("namaUser").textContent = "Halo, " + sesi.nama;
 document.getElementById("btnLogout").addEventListener("click", () => {
   localStorage.removeItem("sesiPKL");
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 });
 
 // Ganti tab
